@@ -204,7 +204,7 @@ class App:
             if self.game.isCollision(self.apple.x, self.apple.y, self.computer.x[i], self.computer.y[i], 44):
                 self.apple.x = randint(2, 9) * 44
                 self.apple.y = randint(2, 9) * 44
-                # self.computer.length = self.computer.length + 1
+                self.computer.length = self.computer.length + 1
 
         # does snake collide with itself?
         for i in range(2, self.player.length):
@@ -213,6 +213,16 @@ class App:
                 print("x[0] (" + str(self.player.x[0]) + "," + str(self.player.y[0]) + ")")
                 print("x[" + str(i) + "] (" + str(self.player.x[i]) + "," + str(self.player.y[i]) + ")")
                 exit(0)
+
+        # does computer snake collide with itself?
+        # 12 means the computer has more leeway for collisions
+        for i in range(12, self.computer.length):
+            if self.game.isCollision(self.computer.x[0], self.computer.y[0], self.computer.x[i], self.computer.y[i], 40):
+                print("You Win! Computer player Collision: ")
+                print("x[0] (" + str(self.computer.x[0]) + "," + str(self.computer.y[0]) + ")")
+                print("x[" + str(i) + "] (" + str(self.computer.x[i]) + "," + str(self.computer.y[i]) + ")")
+                exit(0)
+
 
         for i in range(0, self.player.length):
             if self.game.isCollision(self.computer.x[0], self.computer.y[0], self.player.x[i], self.player.y[i], 40):
