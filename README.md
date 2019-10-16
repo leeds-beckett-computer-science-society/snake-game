@@ -14,10 +14,10 @@ from pygame.locals import *
 from random import randint
 import pygame
 import time 
------------------------------------------------------------------------------------------------------------------
-Then we want to define a player class which can define certain attributes such as movement.
 
-Step 2) define player class and attributes
+// Then we want to define a player class which can define certain attributes such as movement.
+
+// Step 2) define player class and attributes
 
 // you can play with the speed and size to change the game
 // a class is an object orientated concept whiccencapsulates data
