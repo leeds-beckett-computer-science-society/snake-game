@@ -212,7 +212,12 @@ class App:
                 print("You lose! Collision: ")
                 print("x[0] (" + str(self.player.x[0]) + "," + str(self.player.y[0]) + ")")
                 print("x[" + str(i) + "] (" + str(self.player.x[i]) + "," + str(self.player.y[i]) + ")")
-                sys.exit(0)
+                exit(0)
+
+        for i in range(0, self.player.length):
+            if self.game.isCollision(self.computer.x[0], self.computer.y[0], self.player.x[i], self.player.y[i], 40):
+                print("You lose! Collision: ")
+                exit(0)
 
         pass
 
